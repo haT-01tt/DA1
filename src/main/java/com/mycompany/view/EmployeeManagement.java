@@ -29,17 +29,13 @@ public class EmployeeManagement extends javax.swing.JFrame {
     private List<Employee> listObj = null;
     private RoleService roleService = new RoleServiceImpl();
     private static Employee e = null;
-    
-    
 
     public EmployeeManagement(Employee em) {
         initComponents();
         setLocationRelativeTo(null);
         showText(em);
-        
-    }
 
-   
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -244,11 +240,11 @@ public class EmployeeManagement extends javax.swing.JFrame {
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
 
- if (txtFullName.getText().equals("") || txtAddress.getText().equals("") || txtUserName.getText().equals("") || txtPhoneNumber.getText().equals("") || txtPassword.getText().equals("") || txtEmail.getText().equals("")) {
+        if (txtFullName.getText().equals("") || txtAddress.getText().equals("") || txtUserName.getText().equals("") || txtPhoneNumber.getText().equals("") || txtPassword.getText().equals("") || txtEmail.getText().equals("")) {
             JOptionPane.showMessageDialog(this, "Please enter the information");
             return;
-        }   
- employeeService = new EmployeeServiceImpl();
+        }
+        employeeService = new EmployeeServiceImpl();
         try {
             String userName = txtUserName.getText().trim();
             e = employeeService.getByUsername(userName);
@@ -264,7 +260,7 @@ public class EmployeeManagement extends javax.swing.JFrame {
 
                 employeeService.modify(e);
                 JOptionPane.showMessageDialog(this, "Update success");
-             
+
                 showText(e);
             }
 
@@ -275,17 +271,16 @@ public class EmployeeManagement extends javax.swing.JFrame {
 
     private void btnChooseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChooseActionPerformed
         JFileChooser fileChooser = new JFileChooser();
-        FileNameExtensionFilter imageFilter = new FileNameExtensionFilter("Image","jpg","png");
+        FileNameExtensionFilter imageFilter = new FileNameExtensionFilter("Image", "jpg", "png");
         fileChooser.setFileFilter(imageFilter);
         fileChooser.setMultiSelectionEnabled(false);
-        
+
         int x = fileChooser.showDialog(this, "Select");
-        if(x == JFileChooser.APPROVE_OPTION){
+        if (x == JFileChooser.APPROVE_OPTION) {
             File f = fileChooser.getSelectedFile();
-            
+
             lblImage.setIcon(new ImageIcon(f.getAbsolutePath()));
-            
-            
+
         }
     }//GEN-LAST:event_btnChooseActionPerformed
 
@@ -295,8 +290,8 @@ public class EmployeeManagement extends javax.swing.JFrame {
 
     private void btcCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btcCancelActionPerformed
         this.dispose();
-        
-        
+
+
     }//GEN-LAST:event_btcCancelActionPerformed
 
     /**
@@ -340,7 +335,7 @@ public class EmployeeManagement extends javax.swing.JFrame {
 //            }
 //        });
 //    }
-    public void showText(Employee em){
+    public void showText(Employee em) {
         e = em;
         txtEmail.setText(em.getAddress());
         txtFullName.setText(em.getFullName());
@@ -361,6 +356,7 @@ public class EmployeeManagement extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }
+
     public static String getSaltString() {
         String SALTCHARS = "0123456789";
         StringBuilder salt = new StringBuilder();

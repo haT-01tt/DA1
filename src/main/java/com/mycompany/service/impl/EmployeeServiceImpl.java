@@ -16,7 +16,6 @@ import com.mycompany.service.EmployeeService;
 public class EmployeeServiceImpl implements EmployeeService {
 
     private EmployeeRepo personRepo = new EmployeeRepo();
-    
 
     @Override
     public List<Employee> getList() {

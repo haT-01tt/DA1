@@ -407,7 +407,7 @@ public class PromotionManagement extends javax.swing.JFrame {
     }//GEN-LAST:event_btnNewActionPerformed
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
-    if (txtCode.getText().equals("") || txtname.getText().equals("") || txtdis.getText().equals("")) {
+        if (txtCode.getText().equals("") || txtname.getText().equals("") || txtdis.getText().equals("")) {
             JOptionPane.showMessageDialog(this, "Please enter the information");
             return;
         }

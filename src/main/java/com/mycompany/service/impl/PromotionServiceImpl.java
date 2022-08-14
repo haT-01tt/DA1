@@ -9,19 +9,18 @@ import com.mycompany.reopsitory.PromotionRepo;
 import com.mycompany.service.PromotionService;
 import java.util.List;
 
-
-
 /**
  *
  * @author haanh
  */
-public class PromotionServiceImpl implements PromotionService{
+public class PromotionServiceImpl implements PromotionService {
+
     PromotionRepo promotionRepo = new PromotionRepo();
+
     @Override
     public Promotion getByPromoCode(String promoCode) {
         return promotionRepo.getByPromoCode(promoCode);
     }
-    
 
     @Override
     public List<Promotion> getList() {
@@ -32,8 +31,6 @@ public class PromotionServiceImpl implements PromotionService{
     public Boolean save(Promotion promotion) {
         return promotionRepo.save(promotion);
     }
-
-
 
     @Override
     public Boolean remove(Integer id) {
@@ -53,9 +50,10 @@ public class PromotionServiceImpl implements PromotionService{
         return promotionRepo.update(promotion);
 
     }
-        @Override
+
+    @Override
     public Promotion getProByID(Integer id) {
         return promotionRepo.getProById(id);
     }
-    
+
 }

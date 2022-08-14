@@ -29,7 +29,7 @@ public class HomePage extends javax.swing.JFrame {
     private static Employee e = null;
     private Product product = null;
     private List<Object[]> list = null;
-    
+
     public HomePage(Employee employee) {
         initComponents();
         setLocationRelativeTo(null);
@@ -38,16 +38,14 @@ public class HomePage extends javax.swing.JFrame {
 
         lblUser.setText("Username: " + e.getUsername());
         lblRole.setText("Role: " + e.getRole().getName());
-        
+
         setDate();
-        if(e.getRole().getId() == 2){
+        if (e.getRole().getId() == 2) {
             btnThongKe.setVisible(false);
             btnAccount.setVisible(false);
         }
     }
 
-
-    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -444,8 +442,8 @@ public class HomePage extends javax.swing.JFrame {
     }//GEN-LAST:event_btnHoaDonActionPerformed
 
     private void btnThongKeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThongKeActionPerformed
-            Statistical st = new Statistical();
-            st.setVisible(true);
+        Statistical st = new Statistical();
+        st.setVisible(true);
     }//GEN-LAST:event_btnThongKeActionPerformed
 
     private void btnDangXuatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDangXuatActionPerformed
@@ -456,19 +454,19 @@ public class HomePage extends javax.swing.JFrame {
     }//GEN-LAST:event_btnDangXuatActionPerformed
 
     private void btnAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAccountActionPerformed
-       AccountManager ac = new AccountManager(e);
-       ac.setVisible(true);
-       this.dispose();
+        AccountManager ac = new AccountManager();
+        ac.setVisible(true);
+        
     }//GEN-LAST:event_btnAccountActionPerformed
 
     private void btnThongKe2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThongKe2ActionPerformed
-      Card c = new Card(e);
-      c.setVisible(true);
+        Card c = new Card(e);
+        c.setVisible(true);
     }//GEN-LAST:event_btnThongKe2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-PromotionManagement p = new PromotionManagement();
-p.setVisible(true);
+        PromotionManagement p = new PromotionManagement();
+        p.setVisible(true);
 // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -518,17 +516,18 @@ p.setVisible(true);
 //            });
 //        }
 //    }
-    public void setDate(){
+
+    public void setDate() {
         ActionListener actionDate = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 java.util.Date mydate = new Date();
-                
+
                 lblTime.setText(mydate.getHours() + ":" + mydate.getMinutes() + ":" + mydate.getSeconds());
             }
         };
-        new javax.swing.Timer(1000,actionDate).start();
-        
+        new javax.swing.Timer(1000, actionDate).start();
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

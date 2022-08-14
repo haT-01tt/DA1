@@ -24,7 +24,8 @@ import org.hibernate.service.ServiceRegistry;
  * @author haanh
  */
 public class HibernateUtil {
-     private static final SessionFactory FACTORY;
+
+    private static final SessionFactory FACTORY;
 
     static {
         Configuration conf = new Configuration();
@@ -33,7 +34,7 @@ public class HibernateUtil {
         properties.put(Environment.DIALECT, "org.hibernate.dialect.SQLServerDialect");
         properties.put(Environment.DRIVER, "com.microsoft.sqlserver.jdbc.SQLServerDriver");
         properties.put(Environment.URL, "jdbc:sqlserver://localhost:1433;databaseName=ShStore");
-        properties.put(Environment.USER, "sa");
+        properties.put(Environment.USER, "tuanha");
         properties.put(Environment.PASS, "123");
         properties.put(Environment.SHOW_SQL, "true");
 

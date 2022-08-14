@@ -9,15 +9,14 @@ import com.mycompany.reopsitory.OrderRepo;
 import com.mycompany.service.OrderService;
 import java.util.List;
 
-
-
 /**
  *
  * @author haanh
  */
-public class OrderServiceImpl implements OrderService{
+public class OrderServiceImpl implements OrderService {
+
     private OrderRepo orderRepo = new OrderRepo();
-    
+
     @Override
     public List<Order> findAll() {
         return orderRepo.getAll();
@@ -25,7 +24,7 @@ public class OrderServiceImpl implements OrderService{
 
     @Override
     public List<Object[]> findAllCustomOrder() {
-        return orderRepo.getAllCustomOrder(); 
+        return orderRepo.getAllCustomOrder();
     }
 
     @Override
@@ -41,7 +40,7 @@ public class OrderServiceImpl implements OrderService{
     @Override
     public Boolean remove(Integer id) {
         Order order = this.getById(id);
-        if(order != null){
+        if (order != null) {
             order.setStatus(false);
             this.modify(order);
             return true;
@@ -53,5 +52,5 @@ public class OrderServiceImpl implements OrderService{
     public Integer create(Order order) {
         return orderRepo.save(order);
     }
-    
+
 }

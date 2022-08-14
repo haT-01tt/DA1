@@ -34,12 +34,13 @@ public class Card extends javax.swing.JFrame {
     private static Employee em = null;
     private Object[] obj = null;
     private DefaultTableModel defaultTableModel = null;
+
     public Card(Employee employee) {
         initComponents();
         setLocationRelativeTo(null);
         fillToProduct(null);
         em = employee;
-
+        
     }
 
     /**
@@ -70,6 +71,7 @@ public class Card extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         txtSearchPro = new javax.swing.JTextField();
         btnSearch = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -244,6 +246,13 @@ public class Card extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setText("Refresh");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -260,10 +269,15 @@ public class Card extends javax.swing.JFrame {
                         .addComponent(txtSearchPro, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 209, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 130, Short.MAX_VALUE)
                         .addComponent(btnAddCard, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(60, 60, 60))))
         );
+
+        jPanel3Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {btnSearch, jButton2});
+
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
@@ -272,11 +286,14 @@ public class Card extends javax.swing.JFrame {
                     .addComponent(btnAddCard)
                     .addComponent(jLabel4)
                     .addComponent(txtSearchPro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSearch))
+                    .addComponent(btnSearch)
+                    .addComponent(jButton2))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32))
         );
+
+        jPanel3Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnSearch, jButton2});
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setText("List product");
@@ -414,7 +431,7 @@ public class Card extends javax.swing.JFrame {
     }//GEN-LAST:event_btnDeleteOneActionPerformed
 
     private void btnDeleteAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteAllActionPerformed
-
+        
         listCard = new ArrayList<>();
         fillToCard();
 
@@ -427,7 +444,7 @@ public class Card extends javax.swing.JFrame {
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         ProductService productService = new ProductServiceImpl();
-
+        
         String proCode = txtSearchPro.getText();
 //        List<Object[]> list2 = productService.getAllByCode(proCode);
 
@@ -444,18 +461,21 @@ public class Card extends javax.swing.JFrame {
             fillToProduct(proCode);
             JOptionPane.showMessageDialog(this, "Search success");
             
-
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(this, "Search failed");
         }
-
+        
 
     }//GEN-LAST:event_btnSearchActionPerformed
 
     private void btcCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btcCancelActionPerformed
-this.dispose();        // TODO add your handling code here:
+        this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_btcCancelActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        fillToProduct(null);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -491,13 +511,12 @@ this.dispose();        // TODO add your handling code here:
 //            }
 //        });
 //    }
-
     public void fillToProduct(String data) {
         defaultTableModel = (DefaultTableModel) tblProduct.getModel();
         ProductService pro = new ProductServiceImpl();
-        if(data == null){
+        if (data == null) {
             list = pro.findAll();
-        }else{
+        } else {
             list = pro.getAllByCode(data);
         }
         
@@ -508,9 +527,9 @@ this.dispose();        // TODO add your handling code here:
             });
         }
     }
-
+    
     public void fillToCard() {
-
+        
         DefaultTableModel defaultTableModel = (DefaultTableModel) tblCard.getModel();
         defaultTableModel.setRowCount(0);
         for (CardItem c : listCard) {
@@ -519,9 +538,9 @@ this.dispose();        // TODO add your handling code here:
             });
         }
     }
-
+    
     public void fillMapToCard() {
-
+        
         DefaultTableModel defaultTableModel = (DefaultTableModel) tblCard.getModel();
         defaultTableModel.setRowCount(0);
         for (Entry<Object[], Integer> e : map.entrySet()) {
@@ -531,7 +550,7 @@ this.dispose();        // TODO add your handling code here:
             });
         }
     }
-
+    
     public void click() {
         rowSelectedCard = tblCard.getSelectedRow();
         List<Object[]> listObject = new ArrayList<>(map.keySet());
@@ -553,6 +572,7 @@ this.dispose();        // TODO add your handling code here:
     private javax.swing.JButton btnSearch;
     private javax.swing.JButton btnUpdate;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel3;

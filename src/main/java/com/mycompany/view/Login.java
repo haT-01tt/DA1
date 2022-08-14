@@ -58,7 +58,6 @@ public class Login extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel3.setText("Username:");
 
-        txtUsername.setText("tuanha");
         txtUsername.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtUsernameActionPerformed(evt);
@@ -93,8 +92,6 @@ public class Login extends javax.swing.JFrame {
                 lblForgotPasswordMouseClicked(evt);
             }
         });
-
-        txtPassword.setText("123456");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -204,16 +201,21 @@ public class Login extends javax.swing.JFrame {
             String password = txtPassword.getText().trim();
             if (username.length() <= 0 || password.length() <= 0) {
                 JOptionPane.showMessageDialog(this, "Please input username and password");
+                return;
             }
             Employee employee = employeeService.getByUsername(username);
             if ((username.equals(employee.getUsername()) == false) && (password.equals(employee.getPassword()) == false)) {
                 JOptionPane.showMessageDialog(this, "Username or Password incorrect");
+                return;
             } else if (username.equals(employee.getUsername()) == false) {
                 JOptionPane.showMessageDialog(this, "Username is correct or Account does not exist");
+                return;
             } else if (password.equals(employee.getPassword()) == false) {
                 JOptionPane.showMessageDialog(this, "Password is incorrect");
+                return;
             } else if (employee.getAvaliable() == false) {
                 JOptionPane.showMessageDialog(this, "Account has been disabled");
+                return;
             } else {
                 if (password.equals(employee.getPassword()) && employee.getAvaliable() == true) {
                     JOptionPane.showMessageDialog(this, "Login success");

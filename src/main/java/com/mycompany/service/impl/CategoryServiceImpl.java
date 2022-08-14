@@ -35,7 +35,7 @@ public class CategoryServiceImpl implements CategoryService {
     @Override
     public Boolean remove(Integer id) {
         Category category = this.getCateById(id);
-        
+
         if (category != null) {
             category.setAvailable(false);
             this.modify(category);

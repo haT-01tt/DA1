@@ -42,6 +42,4 @@ public class OrderDetailServiceImpl implements OrderDetailService {
         return orderDetailRepo.save(orderDetail);
     }
 
-    
-
 }

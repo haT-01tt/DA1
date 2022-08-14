@@ -21,6 +21,7 @@ public class ForgotPassword extends javax.swing.JFrame {
      */
     private Employee employee = null;
     private EmployeeService employeeService = new EmployeeServiceImpl();
+
     public ForgotPassword() {
         initComponents();
         setLocationRelativeTo(null);
@@ -180,17 +181,17 @@ public class ForgotPassword extends javax.swing.JFrame {
     }//GEN-LAST:event_txtEmailActionPerformed
 
     private void btnChangeThePasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChangeThePasswordActionPerformed
-       Login lg = new Login();
-       lg.setVisible(true);
+        Login lg = new Login();
+        lg.setVisible(true);
     }//GEN-LAST:event_btnChangeThePasswordActionPerformed
 
     private void btnSendCodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSendCodeActionPerformed
-      try{
-          String username = txtUserName.getText().trim();
-          employee = employeeService.getByUsername(username);
-      }catch(Exception e){
-          JOptionPane.showMessageDialog(this, e);
-      }
+        try {
+            String username = txtUserName.getText().trim();
+            employee = employeeService.getByUsername(username);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e);
+        }
     }//GEN-LAST:event_btnSendCodeActionPerformed
 
     /**

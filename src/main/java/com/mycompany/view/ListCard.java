@@ -497,6 +497,10 @@ public class ListCard extends javax.swing.JFrame {
     }//GEN-LAST:event_txtPhoneNumberActionPerformed
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
+        if(txtPhoneNumber.getText().length() < 0 && txtPhoneNumber.getText().length() > 12){
+            JOptionPane.showMessageDialog(this, "Please input phonenumber have length > 0 and length < 12");
+            return;
+        }
         try {
             String phoneNumber = txtPhoneNumber.getText();
             Customer customer = customerService.getPhoneNumber(phoneNumber);

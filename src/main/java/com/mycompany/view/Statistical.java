@@ -19,6 +19,7 @@ public class Statistical extends javax.swing.JFrame {
      */
     private List<Object[]> listObj = null;
     private Object[] obj = null;
+
     public Statistical() {
         initComponents();
         setLocationRelativeTo(null);
@@ -30,7 +31,6 @@ public class Statistical extends javax.swing.JFrame {
         }
         lblTotalrevenue.setText(String.valueOf(total));
     }
-
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -143,7 +143,7 @@ public class Statistical extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
-       
+
     }//GEN-LAST:event_btnSearchActionPerformed
 
     /**
@@ -180,7 +180,6 @@ public class Statistical extends javax.swing.JFrame {
 //            }
 //        });
 //    }
-
     public void fillToOrder() {
         DefaultTableModel defaultTableModel = (DefaultTableModel) tblRevenue.getModel();
         listObj = new OrderServiceImpl().findAllCustomOrder();

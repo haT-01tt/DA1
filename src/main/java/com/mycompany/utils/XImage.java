@@ -13,7 +13,8 @@ import javax.swing.ImageIcon;
  * @author Admin
  */
 public class XImage {
-    public static Image getAppIcon(){
+
+    public static Image getAppIcon() {
         URL url = XImage.class.getResource("/icon/627.png");
         return new ImageIcon(url).getImage();
     }

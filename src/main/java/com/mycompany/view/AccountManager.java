@@ -26,16 +26,16 @@ public class AccountManager extends javax.swing.JFrame {
     private List<Employee> list = new ArrayList<>();
     private EmployeeRepo empRp;
     private EmployeeService empService = new EmployeeServiceImpl();
-    private Employee e = null;
+    private static Employee e = new Employee();
 
     /**
      * Creates new form AccountManager
      */
-    public AccountManager(Employee employee) {
+    public AccountManager() {
         initComponents();
         setLocationRelativeTo(null);
         fill();
-        e = employee;
+        
 
     }
 
@@ -336,13 +336,13 @@ public class AccountManager extends javax.swing.JFrame {
             }
 
         } catch (Exception e) {
+            e.printStackTrace();
             JOptionPane.showMessageDialog(this, "Update fail");
         }
     }//GEN-LAST:event_btnUpdateActionPerformed
 
     private void btcCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btcCancelActionPerformed
-        HomePage hp = new HomePage(e);
-        hp.setVisible(true);
+
         this.dispose();
     }//GEN-LAST:event_btcCancelActionPerformed
 

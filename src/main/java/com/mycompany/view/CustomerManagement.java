@@ -32,7 +32,6 @@ public class CustomerManagement extends javax.swing.JFrame {
         fillToTable();
 
 //        txtCusCode.setText("Cus" + getSaltString());
-
     }
 
     /**
@@ -294,12 +293,12 @@ public class CustomerManagement extends javax.swing.JFrame {
     }//GEN-LAST:event_btnNewActionPerformed
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
-if(txtCusCode.getText().equals("") || txtFullName.getText().equals("") || txtAddress.getText().equals("") || txtEmail.getText().equals("") || txtPhoneNumber.getText().equals("")){
-     JOptionPane.showMessageDialog(this, "Please enter the information");
+        if (txtCusCode.getText().equals("") || txtFullName.getText().equals("") || txtAddress.getText().equals("") || txtEmail.getText().equals("") || txtPhoneNumber.getText().equals("")) {
+            JOptionPane.showMessageDialog(this, "Please enter the information");
             return;
-}
+        }
         customerService = new CustomerServiceImpl();
-     
+
         try {
             String cusCode = txtCusCode.getText().trim();
             customer = customerService.getByCusCode(cusCode);
@@ -323,10 +322,10 @@ if(txtCusCode.getText().equals("") || txtFullName.getText().equals("") || txtAdd
     }//GEN-LAST:event_btnUpdateActionPerformed
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
-       if(txtCusCode.getText().equals("") || txtFullName.getText().equals("") || txtAddress.getText().equals("") || txtEmail.getText().equals("") || txtPhoneNumber.getText().equals("")){
-     JOptionPane.showMessageDialog(this, "Please enter the information");
+        if (txtCusCode.getText().equals("") || txtFullName.getText().equals("") || txtAddress.getText().equals("") || txtEmail.getText().equals("") || txtPhoneNumber.getText().equals("")) {
+            JOptionPane.showMessageDialog(this, "Please enter the information");
             return;
-}
+        }
         try {
             Customer customer = new Customer();
             customer.setFullName(txtFullName.getText());
@@ -403,7 +402,7 @@ if(txtCusCode.getText().equals("") || txtFullName.getText().equals("") || txtAdd
     }//GEN-LAST:event_tblListCusMouseClicked
 
     private void btcCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btcCancelActionPerformed
-this.dispose();        // TODO add your handling code here:
+        this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_btcCancelActionPerformed
 
     /**
@@ -441,7 +440,6 @@ this.dispose();        // TODO add your handling code here:
 //            }
 //        });
 //    }
-
     public void fillToTable() {
         DefaultTableModel defaultTableModel = (DefaultTableModel) tblListCus.getModel();
         listCus = new CustomerServiceImpl().findAll();

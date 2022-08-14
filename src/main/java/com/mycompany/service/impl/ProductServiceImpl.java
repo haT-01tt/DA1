@@ -44,7 +44,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Product getByProductCode(String productCode) {
-      return productRepo.getByProductCode(productCode);
+        return productRepo.getByProductCode(productCode);
     }
 
     @Override
@@ -56,10 +56,4 @@ public class ProductServiceImpl implements ProductService {
 //    public Product getAllByCode(String productCode) {
 //        return productRepo.getAllByCode(productCode);
 //    }
-
-    
-
- 
-   
-
 }

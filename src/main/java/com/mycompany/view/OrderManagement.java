@@ -318,4 +318,500 @@ public class OrderManagement extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel10)
-                            .addComponent(txtEmpName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.s
+                            .addComponent(txtEmpName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(24, 24, 24)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel15)
+                            .addComponent(txtCusName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel8)
+                            .addComponent(txtOrderDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addGap(12, 12, 12)
+                                .addComponent(lblTotalPrice))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel14)
+                                    .addComponent(txtTotalPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel16)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(rdoPaid)
+                                    .addComponent(rdoUnPaid))))
+                        .addGap(18, 18, 18)
+                        .addComponent(btnNewO1)
+                        .addGap(46, 46, 46))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(8, 8, 8)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtCodeOD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel9))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel13)
+                            .addComponent(txtProductOD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtOrderCodeOD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel17))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel18))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel19))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btcCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnUpdateOD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(67, 67, 67))
+        );
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(631, 631, 631)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 658, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void tblOrderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblOrderMouseClicked
+        showClick();
+        fillToOrderDetail();
+    }//GEN-LAST:event_tblOrderMouseClicked
+
+    private void tblOderDetailMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblOderDetailMouseClicked
+        int index = tblOderDetail.getSelectedRow();
+        detail = listOrderDetails.get(index);
+        txtProductOD.setText(detail.getProduct().getName());
+        txtOrderCodeOD.setText(detail.getOrder().getOrderCode());
+        txtCodeOD.setText(detail.getOrderDetailCode());
+        txtPrice.setText(String.valueOf(detail.getPrice()));
+        txtQuantity.setValue((Integer) detail.getQuantity());
+    }//GEN-LAST:event_tblOderDetailMouseClicked
+
+    private void btnUpdateODActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateODActionPerformed
+        detailService = new OrderDetailServiceImpl();
+        try {
+            Integer id = detail.getId();
+            detail = detailService.getById(id);
+
+            detail.setQuantity((Integer) txtQuantity.getValue());
+
+            detailService.modify(detail);
+            fillToOrderDetail();
+            fillToOrder();
+            clear();
+            JOptionPane.showMessageDialog(this, "Update success");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Update Fail");
+        }
+    }//GEN-LAST:event_btnUpdateODActionPerformed
+
+    private void btcCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btcCancelActionPerformed
+
+        this.dispose();
+    }//GEN-LAST:event_btcCancelActionPerformed
+
+    private void btnNewO1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewO1ActionPerformed
+        if (txtOrderCode.getText().equals("")) {
+            JOptionPane.showMessageDialog(this, "Choose order pls");
+            return;
+        }
+        try {
+            XSSFWorkbook workbook = new XSSFWorkbook();
+            //Tao sheet
+            XSSFSheet sheet = workbook.createSheet("Mã hóa đơn " + txtOrderCode.getText());
+            CellStyle cellStyle = createStyleForHeader(sheet);
+            CellStyle cellStyle1 = createStyleForHeader1(sheet);
+            CellStyle cellStyle2 = createStyleForHeader2(sheet);
+            XSSFRow row = null;
+            Cell cell = null;
+//----------------------------------------------------------------------------------
+
+            row = sheet.createRow(0);
+
+            cell = row.createCell(6, CellType.STRING);
+            cell.setCellStyle(cellStyle2);
+            cell.setCellValue("Thông tin hóa đơn");
+//----------------------------------------------------------------------------------
+            row = sheet.createRow(2);
+
+            cell = row.createCell(0, CellType.STRING);
+            cell.setCellStyle(cellStyle1);
+            cell.setCellValue("Hóa đơn");
+//----------------------------------------------------------------------------------
+            row = sheet.createRow(3);
+
+            cell = row.createCell(0, CellType.STRING);
+            cell.setCellStyle(cellStyle);
+            cell.setCellValue("Mã hóa đơn");
+            cell = row.createCell(1, CellType.STRING);
+            cell.setCellStyle(cellStyle);
+            cell.setCellValue("Tên nhân viên");
+            cell = row.createCell(2, CellType.STRING);
+            cell.setCellStyle(cellStyle);
+            cell.setCellValue("Tên khách hàng");
+            cell = row.createCell(3, CellType.STRING);
+            cell.setCellStyle(cellStyle);
+            cell.setCellValue("Ngày tạo");
+            cell = row.createCell(4, CellType.STRING);
+            cell.setCellStyle(cellStyle);
+            cell.setCellValue("Tổng tiền ");
+            cell = row.createCell(5, CellType.STRING);
+            cell.setCellStyle(cellStyle);
+            cell.setCellValue("Trạng thái");
+
+            row = sheet.createRow(4);
+            cell = row.createCell(0, CellType.STRING);
+            cell.setCellValue(txtOrderCode.getText());
+            cell = row.createCell(1, CellType.STRING);
+            cell.setCellValue(txtEmpName.getText());
+            cell = row.createCell(2, CellType.STRING);
+            cell.setCellValue(txtCusName.getText());
+            cell = row.createCell(3, CellType.STRING);
+            cell.setCellValue(txtOrderDate.getText());
+            cell = row.createCell(4, CellType.STRING);
+            cell.setCellValue(txtTotalPrice.getText());
+            cell = row.createCell(5, CellType.STRING);
+            cell.setCellValue("Đã thanh toán");
+
+//----------------------------------------------------------------------------------
+            sheet.addMergedRegion(CellRangeAddress.valueOf("G1:J1"));
+            sheet.addMergedRegion(CellRangeAddress.valueOf("A3:B3"));
+            sheet.addMergedRegion(CellRangeAddress.valueOf("A7:C7"));
+
+//----------------------------------------------------------------------------------
+            row = sheet.createRow(6);
+            cell = row.createCell(0, CellType.STRING);
+            cell.setCellStyle(cellStyle1);
+            cell.setCellValue("Hóa đơn chi tiết");
+//----------------------------------------------------------------------------------
+            row = sheet.createRow(7);
+            cell = row.createCell(0, CellType.STRING);
+            cell.setCellStyle(cellStyle);
+            cell.setCellValue("STT");
+
+            cell = row.createCell(1, CellType.STRING);
+            cell.setCellStyle(cellStyle);
+            cell.setCellValue("ID");
+
+            cell = row.createCell(2, CellType.STRING);
+            cell.setCellStyle(cellStyle);
+            cell.setCellValue("Hóa đơn chi tiết");
+
+            cell = row.createCell(3, CellType.STRING);
+            cell.setCellStyle(cellStyle);
+            cell.setCellValue("Tên món ăn");
+
+            cell = row.createCell(4, CellType.STRING);
+            cell.setCellStyle(cellStyle);
+            cell.setCellValue("Hóa đơn ");
+
+            cell = row.createCell(5, CellType.STRING);
+            cell.setCellStyle(cellStyle);
+            cell.setCellValue("Gía");
+
+            cell = row.createCell(6, CellType.STRING);
+            cell.setCellStyle(cellStyle);
+            cell.setCellValue("Số lượng");
+            for (int i = 0; i < listOrderDetails.size(); i++) {
+                row = sheet.createRow(8 + i);
+
+                cell = row.createCell(0, CellType.NUMERIC);
+                cell.setCellValue(i + 1);
+
+                cell = row.createCell(1, CellType.STRING);
+                cell.setCellValue(listOrderDetails.get(i).getId());
+
+                cell = row.createCell(2, CellType.STRING);
+                cell.setCellValue(listOrderDetails.get(i).getOrderDetailCode());
+
+                cell = row.createCell(3, CellType.STRING);
+                cell.setCellValue(listOrderDetails.get(i).getProduct().getName());
+
+                cell = row.createCell(4, CellType.STRING);
+                cell.setCellValue(listOrderDetails.get(i).getOrder().getOrderCode());
+
+                cell = row.createCell(5, CellType.STRING);
+                cell.setCellValue(listOrderDetails.get(i).getPrice());
+
+                cell = row.createCell(6, CellType.STRING);
+                cell.setCellValue(listOrderDetails.get(i).getQuantity());
+
+                File f = new File("D:\\DA1\\Project\\hoadon.xlsx");
+                try {
+                    FileOutputStream fis = new FileOutputStream(f);
+                    workbook.write(fis);
+                    fis.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+
+            JOptionPane.showMessageDialog(this, "Successfully");
+        } catch (Exception e) {
+            e.printStackTrace();
+
+        }
+
+
+    }//GEN-LAST:event_btnNewO1ActionPerformed
+
+    /**
+     * @param args the command line arguments
+     */
+//    public static void main(String args[]) {
+//        /* Set the Nimbus look and feel */
+//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+//         */
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(OrderManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(OrderManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(OrderManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(OrderManagement.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//        //</editor-fold>
+//        //</editor-fold>
+//
+//        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new OrderManagement().setVisible(true);
+//            }
+//        });
+//    }
+    public void fillToOrder() {
+        DefaultTableModel defaultTableModel = (DefaultTableModel) tblOrder.getModel();
+        listObj = new OrderServiceImpl().findAllCustomOrder();
+        defaultTableModel.setRowCount(0);
+        for (Object[] o : listObj) {
+            defaultTableModel.addRow(new Object[]{
+                o[0], o[1], o[2], o[3], o[4], o[5], (Boolean) o[6] ? "Processed" : "Unprocessed"
+            });
+        }
+    }
+
+    private static CellStyle createStyleForHeader(Sheet sheet) {
+        // Create font
+        Font font = sheet.getWorkbook().createFont();
+        font.setFontName("Tahoma");
+        font.setBold(true);
+        font.setFontHeightInPoints((short) 12); // font size
+        font.setColor(IndexedColors.WHITE.getIndex()); // text color
+        // Create CellStyle
+        CellStyle cellStyle = sheet.getWorkbook().createCellStyle();
+        cellStyle.setFont(font);
+        cellStyle.setFillForegroundColor(IndexedColors.BLUE.getIndex());
+        cellStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
+        cellStyle.setBorderBottom(BorderStyle.THIN);
+
+        return cellStyle;
+    }
+
+    private static CellStyle createStyleForHeader1(Sheet sheet) {
+        // Create font
+
+        Font font = sheet.getWorkbook().createFont();
+        font.setFontName("Tahoma");
+        font.setBold(true);
+        font.setFontHeightInPoints((short) 12); // font size
+        font.setColor(IndexedColors.WHITE.getIndex()); // text color
+        // Create CellStyle
+        CellStyle cellStyle = sheet.getWorkbook().createCellStyle();
+        cellStyle.setFont(font);
+        cellStyle.setFillForegroundColor(IndexedColors.RED.getIndex());
+        cellStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
+        cellStyle.setBorderBottom(BorderStyle.THIN);
+
+        return cellStyle;
+    }
+
+    private static CellStyle createStyleForHeader2(Sheet sheet) {
+        // Create font
+        Font font = sheet.getWorkbook().createFont();
+        font.setFontName("Tahoma");
+        font.setBold(true);
+        font.setFontHeightInPoints((short) 20);
+        font.setColor(IndexedColors.BLACK.getIndex()); // text color
+        // Create CellStyle
+        CellStyle cellStyle = sheet.getWorkbook().createCellStyle();
+        cellStyle.setFont(font);
+        cellStyle.setFillForegroundColor(IndexedColors.YELLOW.getIndex());
+        cellStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
+        cellStyle.setBorderBottom(BorderStyle.THIN);
+
+        return cellStyle;
+    }
+
+    public void fillToOrderDetail() {
+        detailService = new OrderDetailServiceImpl();
+        String orderCode = obj[1].toString().trim();
+        listOrderDetails = detailService.findAll(orderCode);
+        DefaultTableModel defaultTableModel = (DefaultTableModel) tblOderDetail.getModel();
+        defaultTableModel.setRowCount(0);
+        for (OrderDetail od : listOrderDetails) {
+            defaultTableModel.addRow(new Object[]{
+                od.getId(), od.getOrderDetailCode(), od.getProduct().getName(),
+                od.getOrder().getOrderCode(), od.getPrice(), od.getQuantity()
+            });
+        }
+
+    }
+//    public void showText() {
+//        if(order.getStatus()){
+//            txaNote.setText("Customer Name: " + txtCusName.getText() + "\n"
+//                + "Employee Name: " + txtEmpName.getText() + "\n"
+//                + "Order Code: " + txtOrderCode.getText() + "\n"
+//                + "Create Date: " + txtOrderDate.getText() + "\n"
+//                + "Total Price: " + txtTotalPrice.getText() + "\n"
+//                + "Status: Paid"
+//        );
+//        }else{
+//            txaNote.setText("Customer Name: " + txtCusName.getText() + "\n"
+//                + "Employee Name: " + txtEmpName.getText() + "\n"
+//                + "Order Code: " + txtOrderCode.getText() + "\n"
+//                + "Create Date: " + txtOrderDate.getText() + "\n"
+//                + "Total Price: " + txtTotalPrice.getText() + "\n"
+//                + "Status: Unpaid"
+//        );
+//        }
+//        
+//    }
+
+    public String datetoString(Date date) {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        return sdf.format(date);
+    }
+
+    public void showClick() {
+        int index = tblOrder.getSelectedRow();
+        obj = listObj.get(index);
+        txtOrderCode.setText((String) obj[1]);
+        txtEmpName.setText((String) obj[2]);
+        txtCusName.setText((String) obj[3]);
+        txtTotalPrice.setText(String.valueOf((Double) obj[5]));
+        txtOrderDate.setText(((Date) obj[4]).toString());
+        rdoPaid.setSelected((Boolean) obj[6]);
+        rdoUnPaid.setSelected(!(Boolean) obj[6]);
+//        showText();
+    }
+
+    public void clear() {
+        txtCodeOD.setText("");
+        txtProductOD.setText("");
+        txtOrderCodeOD.setText("");
+        txtPrice.setText("");
+        txtQuantity.setValue(0);
+        txtOrderCode.setText("");
+        txtEmpName.setText("");
+        txtCusName.setText("");
+        txtOrderDate.setText("");
+        txtTotalPrice.setText("");
+        rdoPaid.setSelected(false);
+        rdoUnPaid.setSelected(false);
+    }
+
+//    public List<Order> getOrder() {
+//        List<Order> listOrder = orderService.findAll();
+//        Order order = null;
+//        for (Order o : listOrder) {
+//            System.out.println(o);
+//            listOrder.add(order);
+//        }
+//        return listOrder;
+//    }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btcCancel;
+    private javax.swing.JButton btnNewO1;
+    private javax.swing.JButton btnUpdateOD;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel lblTotalPrice;
+    private javax.swing.JRadioButton rdoPaid;
+    private javax.swing.JRadioButton rdoUnPaid;
+    private javax.swing.JTable tblOderDetail;
+    private javax.swing.JTable tblOrder;
+    private javax.swing.JTextField txtCodeOD;
+    private javax.swing.JTextField txtCusName;
+    private javax.swing.JTextField txtEmpName;
+    private javax.swing.JTextField txtOrderCode;
+    private javax.swing.JTextField txtOrderCodeOD;
+    private javax.swing.JTextField txtOrderDate;
+    private javax.swing.JTextField txtPrice;
+    private javax.swing.JTextField txtProductOD;
+    private javax.swing.JSpinner txtQuantity;
+    private javax.swing.JTextField txtTotalPrice;
+    // End of variables declaration//GEN-END:variables
+}

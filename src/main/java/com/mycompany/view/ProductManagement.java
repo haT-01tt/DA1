@@ -591,10 +591,10 @@ public class ProductManagement extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCreate1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreate1ActionPerformed
-if(txtProductCode1.getText().equals("") || txtProductName1.getText().equals("") || txtQuantity1.getText().equals("") || txtPrice1.getText().equals("") || txtDescription1.getText().equals("")){
-    JOptionPane.showMessageDialog(this, "Please enter the information");
+        if (txtProductCode1.getText().equals("") || txtProductName1.getText().equals("") || txtQuantity1.getText().equals("") || txtPrice1.getText().equals("") || txtDescription1.getText().equals("")) {
+            JOptionPane.showMessageDialog(this, "Please enter the information");
             return;
-}
+        }
         categoryService = new CategoryServiceImpl();
         promotionService = new PromotionServiceImpl();
 
@@ -639,10 +639,10 @@ if(txtProductCode1.getText().equals("") || txtProductName1.getText().equals("") 
     }//GEN-LAST:event_btnCreate1ActionPerformed
 
     private void btnUpdate1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdate1ActionPerformed
-      if(txtProductCode1.getText().equals("") || txtProductName1.getText().equals("") || txtQuantity1.getText().equals("") || txtPrice1.getText().equals("") || txtDescription1.getText().equals("")){
-    JOptionPane.showMessageDialog(this, "Please enter the information");
+        if (txtProductCode1.getText().equals("") || txtProductName1.getText().equals("") || txtQuantity1.getText().equals("") || txtPrice1.getText().equals("") || txtDescription1.getText().equals("")) {
+            JOptionPane.showMessageDialog(this, "Please enter the information");
             return;
-}
+        }
         categoryService = new CategoryServiceImpl();
         promotionService = new PromotionServiceImpl();
         productService = new ProductServiceImpl();
@@ -683,7 +683,7 @@ if(txtProductCode1.getText().equals("") || txtProductName1.getText().equals("") 
 
     private void btnSearch1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearch1ActionPerformed
         productService = new ProductServiceImpl();
-        if(txtProductCode1.getText().equals("")){
+        if (txtProductCode1.getText().equals("")) {
             JOptionPane.showMessageDialog(this, "Please input Product Code");
             return;
         }

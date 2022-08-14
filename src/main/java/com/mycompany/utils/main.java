@@ -84,10 +84,10 @@ public class main {
         //        List<Object[]> list = productService.getAllByCode(product);
         //
         //        list.forEach(System.out::print);
-        
 //        String proCode = "PRO01";
 //        Product product = productService.getAllByCode(proCode);
 //        System.out.println(product.toString());
+        System.out.println(HibernateUtil.getFACTORY());
     }
 
 }
