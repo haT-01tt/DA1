@@ -59,13 +59,13 @@ public class SQLCommand {
     public static String FIND_ALL_ORDER_CODE_CUSTOM
             = "SELECT o.id, o.orderCode, o.employee.fullName, o.customer.fullName,  o.createDate, SUM(d.price * d.quantity), o.status ,count(o.id)"
             + "FROM Order o INNER JOIN OrderDetail d ON o.id = d.order.id "
-            + "GROUP BY o.id, o.employee.fullName, o.customer.fullName, o.orderCode, o.createDate, o.status"
-            + "HAVING o.orderCode LIKE ?";
+            + "GROUP BY o.id, o.employee.fullName, o.customer.fullName, o.orderCode, o.createDate, o.status "
+            + "HAVING o.orderCode LIKE :orderCode";
 
     public static String FIND_ALL_ORDER_CUSTOM_DATE
             = "SELECT o.id, o.orderCode, o.employee.fullName, o.customer.fullName,  o.createDate, SUM(d.price * d.quantity), o.status ,count(o.id)"
             + "FROM Order o INNER JOIN OrderDetail d ON o.id = d.order.id "
-            + "GROUP BY o.id, o.employee.fullName, o.customer.fullName, o.orderCode, o.createDate, o.status"
+            + "GROUP BY o.id, o.employee.fullName, o.customer.fullName, o.orderCode, o.createDate, o.status "
             + "HAVING o.createDate LIKE ?";
 
     public static String FIND_ALL_PRODUCT

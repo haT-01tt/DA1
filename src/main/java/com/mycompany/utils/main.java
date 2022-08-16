@@ -9,6 +9,7 @@ import com.mycompany.entity.Customer;
 import java.sql.SQLException;
 import java.util.List;
 import com.mycompany.entity.Employee;
+import com.mycompany.entity.Order;
 import com.mycompany.entity.Product;
 import com.mycompany.entity.Role;
 import com.mycompany.reopsitory.EmployeeRepo;
@@ -88,9 +89,12 @@ public class main {
 //        String proCode = "PRO01";
 //        Product product = productService.getAllByCode(proCode);
 //        System.out.println(product.toString());
-        Random random = new Random();
-        int x = random.nextInt(10000);
-        System.out.println(x);
+        String od = "OD01";
+        Order order = null;
+        OrderService orderService = new OrderServiceImpl();
+        
+        List<Object[]> temp =  orderService.getAllCustomOrderCode(od);
+        System.out.println(temp.size());
     }
 
 }

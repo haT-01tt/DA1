@@ -48,6 +48,7 @@ public class ProductManagement extends javax.swing.JFrame {
     private int index = -1;
     private int rowSelected = -1;
     private String image = "";
+
     public ProductManagement() {
         initComponents();
         setLocationRelativeTo(null);
@@ -599,7 +600,7 @@ public class ProductManagement extends javax.swing.JFrame {
         }
         categoryService = new CategoryServiceImpl();
         promotionService = new PromotionServiceImpl();
-
+        
         int a = JOptionPane.showConfirmDialog(this, "Do you want create ?", "Confirm", JOptionPane.YES_NO_OPTION);
         if (a == JOptionPane.YES_OPTION) {
             try {
@@ -620,7 +621,7 @@ public class ProductManagement extends javax.swing.JFrame {
 //                product.setColor(color);
 
                 product.setCreateDate(date);
-
+                
                 Promotion pro = promotionService.getByPromoCode((String) cboPromo.getSelectedItem());
                 product.setPromotion(pro);
                 product.setValiable(true);
@@ -629,7 +630,7 @@ public class ProductManagement extends javax.swing.JFrame {
 
                 productService = new ProductServiceImpl();
                 productService.create(product);
-
+                
                 JOptionPane.showMessageDialog(this, "Create success");
                 fillToProduct2();
             } catch (Exception e) {
@@ -663,7 +664,7 @@ public class ProductManagement extends javax.swing.JFrame {
             product.setColorName((String) cboColor1.getSelectedItem());
             product.setPrice(Double.parseDouble(txtPrice1.getText()));
             product.setQuantity(Integer.parseInt(txtQuantity1.getText()));
-
+            
             Category cate = categoryService.getByCateName((String) cboCategory1.getSelectedItem());
             product.setCategory(cate);
             Promotion pro = promotionService.getByPromoCode((String) cboPromo.getSelectedItem());
@@ -671,15 +672,15 @@ public class ProductManagement extends javax.swing.JFrame {
 
 //            colorService.modify(c);
             productService.modify(product);
-
+            
             fillToProduct2();
-
+            
             JOptionPane.showMessageDialog(this, "Update success");
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(this, "Update fail");
         }
-
+        
 
     }//GEN-LAST:event_btnUpdate1ActionPerformed
 
@@ -703,11 +704,11 @@ public class ProductManagement extends javax.swing.JFrame {
                 cboPromo.setSelectedItem(product.getPromotion().getPromoCode());
                 rdoActive1.setSelected(product.getValiable());
                 txtDescription1.setText(product.getDescription());
-               
-
+                lblImage.setText(product.getImage());
+                
                 JOptionPane.showMessageDialog(this, "Found success");
             }
-
+            
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(this, "Found fail");
@@ -743,21 +744,21 @@ public class ProductManagement extends javax.swing.JFrame {
     }//GEN-LAST:event_tblProductcatalogMouseClicked
 
     private void btnChoose1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChoose1ActionPerformed
-         try {
+        try {
             JFileChooser fileChooser = new JFileChooser();
             FileNameExtensionFilter imageFilter = new FileNameExtensionFilter("Image", "jpg", "png");
             fileChooser.setFileFilter(imageFilter);
             fileChooser.setMultiSelectionEnabled(false);
-
+            
             int x = fileChooser.showDialog(this, "Select");
             if (x == JFileChooser.APPROVE_OPTION) {
                 File f = fileChooser.getSelectedFile();
                 String path = f.getAbsolutePath();
                 image = path.substring(path.lastIndexOf("\\") + 1);
             }
-
-        }catch(Exception e){
-             e.printStackTrace();
+            
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }//GEN-LAST:event_btnChoose1ActionPerformed
 
@@ -773,21 +774,21 @@ public class ProductManagement extends javax.swing.JFrame {
         if (i == JOptionPane.YES_OPTION) {
             try {
                 category = new Category();
-
+                
                 category.setCateCode(txtCodeCa.getText());
                 category.setName(txtNameCa.getText());
                 category.setAvailable(true);
-
+                
                 categoryService = new CategoryServiceImpl();
                 categoryService.create(category);
-
+                
                 JOptionPane.showMessageDialog(this, "Save success");
                 fillToCategory();
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(this, "Save Fail");
             }
         }
-
+        
 
     }//GEN-LAST:event_btnSaveCatActionPerformed
 
@@ -806,12 +807,12 @@ public class ProductManagement extends javax.swing.JFrame {
                 if (category != null) {
                     category.setCateCode(txtCodeCa.getText());
                     category.setName(txtNameCa.getText());
-
+                    
                     categoryService.modify(category);
-
+                    
                     JOptionPane.showMessageDialog(this, "Update success");
                     fillToCategory();
-
+                    
                 }
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(this, "Update Fail");
@@ -890,7 +891,7 @@ public class ProductManagement extends javax.swing.JFrame {
             });
         }
     }
-
+    
     public void fillToProduct() {
         DefaultTableModel defaultTableModel = (DefaultTableModel) tblProduct.getModel();
         ProductService pro = new ProductServiceImpl();
@@ -902,7 +903,7 @@ public class ProductManagement extends javax.swing.JFrame {
             });
         }
     }
-
+    
     public void fillToProduct2() {
         DefaultTableModel defaultTableModel = (DefaultTableModel) tblProduct2.getModel();
         ProductService pro = new ProductServiceImpl();
@@ -924,12 +925,12 @@ public class ProductManagement extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }
-
+    
     public String datetoString(Date date) {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         return sdf.format(date);
     }
-
+    
     public void showClickProduct() {
         index = tblProduct2.getSelectedRow();
         objPro = list.get(index);
@@ -953,10 +954,10 @@ public class ProductManagement extends javax.swing.JFrame {
             int height = 242;
             lblImage.setIcon(new ImageIcon(img.getScaledInstance(width, height, 0)));
         } catch (Exception e) {
-
+            
         }
     }
-
+    
     public static String getSaltString() {
         String SALTCHARS = "0123456789";
         StringBuilder salt = new StringBuilder();
@@ -967,7 +968,7 @@ public class ProductManagement extends javax.swing.JFrame {
         }
         String saltStr = salt.toString();
         return saltStr;
-
+        
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAd;

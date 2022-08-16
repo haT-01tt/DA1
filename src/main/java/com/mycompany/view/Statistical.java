@@ -4,9 +4,11 @@
  */
 package com.mycompany.view;
 
+import com.mycompany.entity.Order;
 import com.mycompany.entity.OrderDetail;
 import com.mycompany.reopsitory.OrderDetailRepo;
 import com.mycompany.service.OrderDetailService;
+import com.mycompany.service.OrderService;
 import com.mycompany.service.ProductService;
 import com.mycompany.service.impl.OrderDetailServiceImpl;
 import com.mycompany.service.impl.OrderServiceImpl;
@@ -25,8 +27,10 @@ public class Statistical extends javax.swing.JFrame {
      * Creates new form Statistical
      */
     private List<Object[]> listObj = null;
-    private OrderDetailService orderService = null;
-    private OrderDetail order = null;
+//    private OrderDetailService orderService = null;
+//    private OrderDetail order = null;
+    private OrderService orderService = null;
+    private Order order = null;
     private OrderDetailRepo orderRepo = null;
     private Object[] obj = null;
 
@@ -154,18 +158,16 @@ public class Statistical extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
-        orderService = new OrderDetailServiceImpl() {
-        };
+        orderService = new OrderServiceImpl();
         if (txtSearch.getText().equals("")) {
             JOptionPane.showMessageDialog(this, "Please input proCode");
         } else {
             try {
                 String orderCode = txtSearch.getText().trim();
-
                 fillToOrder(orderCode);
-                JOptionPane.showMessageDialog(this, "Found success");
 
             } catch (Exception e) {
+                e.printStackTrace();
                 JOptionPane.showMessageDialog(this, "Not found");
             }
         }
