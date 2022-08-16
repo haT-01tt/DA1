@@ -425,7 +425,7 @@ public class ListCard extends javax.swing.JFrame {
                 Order order = new Order();
                 em = employeeService.getByEmpCode(txtEmpCode.getText());
                 order.setEmployee(em);
-                
+
                 Customer customer = null;
                 try {
                     customer = customerService.getPhoneNumber(txtPhoneNumber.getText());
@@ -436,7 +436,7 @@ public class ListCard extends javax.swing.JFrame {
                     customer.setAvai(true);
                     customer.setId(customerService.create(customer));
                 }
-             
+
                 order.setCustomer(customer);
                 order.setOrderCode(txtODList.getText());
                 order.setCreateDate(date);
@@ -485,7 +485,7 @@ public class ListCard extends javax.swing.JFrame {
     }//GEN-LAST:event_txtPhoneNumberActionPerformed
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
-        if(txtPhoneNumber.getText().length() < 0 && txtPhoneNumber.getText().length() > 12){
+        if (txtPhoneNumber.getText().length() < 0 && txtPhoneNumber.getText().length() > 12) {
             JOptionPane.showMessageDialog(this, "Please input phonenumber have length > 0 and length < 12");
             return;
         }
@@ -505,7 +505,7 @@ public class ListCard extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSearchActionPerformed
 
     private void btcCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btcCancelActionPerformed
-        this.dispose();        // TODO add your handling code here:
+        this.dispose();      
     }//GEN-LAST:event_btcCancelActionPerformed
 
 //    public void fillToListCard(List<CardItem> listCards) {

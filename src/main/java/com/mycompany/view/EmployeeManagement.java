@@ -29,10 +29,12 @@ public class EmployeeManagement extends javax.swing.JFrame {
     private List<Employee> listObj = null;
     private RoleService roleService = new RoleServiceImpl();
     private static Employee e = null;
+    private String image = "";
 
     public EmployeeManagement(Employee em) {
         initComponents();
         setLocationRelativeTo(null);
+        image = em.getImage();
         showText(em);
 
     }
@@ -260,7 +262,7 @@ public class EmployeeManagement extends javax.swing.JFrame {
                 e.setPhoneNumber(txtPhoneNumber.getText());
                 e.setGender(rdoMale.isSelected());
                 e.setGender(!rdoFemale.isSelected());
-
+                
                 employeeService.modify(e);
                 JOptionPane.showMessageDialog(this, "Update success");
 
@@ -273,17 +275,21 @@ public class EmployeeManagement extends javax.swing.JFrame {
     }//GEN-LAST:event_btnUpdateActionPerformed
 
     private void btnChooseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChooseActionPerformed
-        JFileChooser fileChooser = new JFileChooser();
-        FileNameExtensionFilter imageFilter = new FileNameExtensionFilter("Image", "jpg", "png");
-        fileChooser.setFileFilter(imageFilter);
-        fileChooser.setMultiSelectionEnabled(false);
+        try {
+            JFileChooser fileChooser = new JFileChooser();
+            FileNameExtensionFilter imageFilter = new FileNameExtensionFilter("Image", "jpg", "png");
+            fileChooser.setFileFilter(imageFilter);
+            fileChooser.setMultiSelectionEnabled(false);
 
-        int x = fileChooser.showDialog(this, "Select");
-        if (x == JFileChooser.APPROVE_OPTION) {
-            File f = fileChooser.getSelectedFile();
+            int x = fileChooser.showDialog(this, "Select");
+            if (x == JFileChooser.APPROVE_OPTION) {
+                File f = fileChooser.getSelectedFile();
+                String path = f.getAbsolutePath();
+                image = path.substring(path.lastIndexOf("\\") + 1);
+            }
 
-            lblImage.setIcon(new ImageIcon(f.getAbsolutePath()));
-
+        }catch(Exception e){
+             e.printStackTrace();
         }
     }//GEN-LAST:event_btnChooseActionPerformed
 
@@ -349,7 +355,7 @@ public class EmployeeManagement extends javax.swing.JFrame {
         rdoMale.setSelected(em.getGender());
         rdoFemale.setSelected(!em.getGender());
         try {
-            File file = new File("src\\main\\resources\\icon\\" + em.getImage());
+            File file = new File("src\\main\\resources\\icon\\" + image);
             Image img = ImageIO.read(file);
             lblImage.setText(null);
             int width = 210;

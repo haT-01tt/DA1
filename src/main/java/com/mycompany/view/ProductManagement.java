@@ -47,7 +47,7 @@ public class ProductManagement extends javax.swing.JFrame {
     private ProductService productService = null;
     private int index = -1;
     private int rowSelected = -1;
-
+    private String image = "";
     public ProductManagement() {
         initComponents();
         setLocationRelativeTo(null);
@@ -703,7 +703,7 @@ public class ProductManagement extends javax.swing.JFrame {
                 cboPromo.setSelectedItem(product.getPromotion().getPromoCode());
                 rdoActive1.setSelected(product.getValiable());
                 txtDescription1.setText(product.getDescription());
-                lblImage.setText(product.getImage());
+               
 
                 JOptionPane.showMessageDialog(this, "Found success");
             }
@@ -725,7 +725,6 @@ public class ProductManagement extends javax.swing.JFrame {
         cboCategory1.setSelectedItem("");
         txtQuantity1.setText("");
         txtCreateDate1.setText("");
-
         cboColor1.setSelectedItem("");
         cboPromo.setSelectedItem("");
         txtPrice1.setText("");
@@ -744,16 +743,21 @@ public class ProductManagement extends javax.swing.JFrame {
     }//GEN-LAST:event_tblProductcatalogMouseClicked
 
     private void btnChoose1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChoose1ActionPerformed
-        JFileChooser fileChooser = new JFileChooser();
-        FileNameExtensionFilter imageFilter = new FileNameExtensionFilter("Image", "jpg", "png");
-        fileChooser.setFileFilter(imageFilter);
-        fileChooser.setMultiSelectionEnabled(false);
+         try {
+            JFileChooser fileChooser = new JFileChooser();
+            FileNameExtensionFilter imageFilter = new FileNameExtensionFilter("Image", "jpg", "png");
+            fileChooser.setFileFilter(imageFilter);
+            fileChooser.setMultiSelectionEnabled(false);
 
-        int x = fileChooser.showDialog(this, "Select");
-        if (x == JFileChooser.APPROVE_OPTION) {
-            File f = fileChooser.getSelectedFile();
+            int x = fileChooser.showDialog(this, "Select");
+            if (x == JFileChooser.APPROVE_OPTION) {
+                File f = fileChooser.getSelectedFile();
+                String path = f.getAbsolutePath();
+                image = path.substring(path.lastIndexOf("\\") + 1);
+            }
 
-            lblImage.setIcon(new ImageIcon(f.getAbsolutePath()));
+        }catch(Exception e){
+             e.printStackTrace();
         }
     }//GEN-LAST:event_btnChoose1ActionPerformed
 
@@ -908,6 +912,16 @@ public class ProductManagement extends javax.swing.JFrame {
             defaultTableModel.addRow(new Object[]{
                 x[0], x[1], x[2], x[3], x[4], x[5], x[6], x[7], x[8], x[9], x[10], (Boolean) x[11] ? "Active" : "Inactive"
             });
+        }
+        try {
+            File file = new File("src\\main\\resources\\icon\\" + image);
+            Image img = ImageIO.read(file);
+            lblImage.setText(null);
+            int width = 312;
+            int height = 242;
+            lblImage.setIcon(new ImageIcon(img.getScaledInstance(width, height, 0)));
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
