@@ -24,6 +24,7 @@ import com.mycompany.service.*;
 import com.mycompany.service.impl.CustomerServiceImpl;
 import com.mycompany.service.impl.*;
 import com.mycompany.service.impl.*;
+import static java.lang.Integer.max;
 import java.util.Random;
 
 /**
@@ -87,7 +88,9 @@ public class main {
 //        String proCode = "PRO01";
 //        Product product = productService.getAllByCode(proCode);
 //        System.out.println(product.toString());
-        System.out.println(HibernateUtil.getFACTORY());
+        Random random = new Random();
+        int x = random.nextInt(10000);
+        System.out.println(x);
     }
 
 }

@@ -317,7 +317,8 @@ public class ProductManagement extends javax.swing.JFrame {
         });
         jScrollPane6.setViewportView(tblProduct2);
 
-        btnRefresh1.setText("Refresh");
+        btnRefresh1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Refresh.png"))); // NOI18N
+        btnRefresh1.setText("New");
         btnRefresh1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRefresh1ActionPerformed(evt);
@@ -347,6 +348,7 @@ public class ProductManagement extends javax.swing.JFrame {
         buttonGroup1.add(rdoInactive1);
         rdoInactive1.setText("In-active");
 
+        btnChoose1.setBackground(new java.awt.Color(255, 153, 0));
         btnChoose1.setText("Choose File");
         btnChoose1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

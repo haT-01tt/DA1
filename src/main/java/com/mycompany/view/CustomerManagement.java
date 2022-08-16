@@ -61,7 +61,6 @@ public class CustomerManagement extends javax.swing.JFrame {
         btnNew = new javax.swing.JButton();
         btnSave = new javax.swing.JButton();
         btnUpdate = new javax.swing.JButton();
-        btnDelete = new javax.swing.JButton();
         btnSearch = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -138,14 +137,6 @@ public class CustomerManagement extends javax.swing.JFrame {
             }
         });
 
-        btnDelete.setBackground(new java.awt.Color(255, 204, 0));
-        btnDelete.setText("Delete");
-        btnDelete.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDeleteActionPerformed(evt);
-            }
-        });
-
         btnSearch.setBackground(new java.awt.Color(255, 204, 0));
         btnSearch.setText("Search");
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
@@ -213,7 +204,6 @@ public class CustomerManagement extends javax.swing.JFrame {
                                     .addComponent(btcCancel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(45, 45, 45)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(83, 83, 83))
@@ -254,11 +244,9 @@ public class CustomerManagement extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnUpdate)
-                            .addComponent(btnDelete))
+                            .addComponent(btnSearch))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnSearch)
-                            .addComponent(btcCancel))
+                        .addComponent(btcCancel)
                         .addGap(54, 54, 54))
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -345,21 +333,6 @@ public class CustomerManagement extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Save Fail");
         }
     }//GEN-LAST:event_btnSaveActionPerformed
-
-    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
-        customerService = new CustomerServiceImpl();
-        if (customer == null) {
-            JOptionPane.showMessageDialog(this, "Choose customer pls");
-        } else {
-            Boolean bl = customerService.remove(customer.getId());
-            if (bl) {
-                JOptionPane.showMessageDialog(this, "Remove success");
-                fillToTable();
-            } else {
-                JOptionPane.showMessageDialog(this, "Remove Fail");
-            }
-        }
-    }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         customerService = new CustomerServiceImpl();
@@ -466,7 +439,6 @@ public class CustomerManagement extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btcCancel;
-    private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnNew;
     private javax.swing.JButton btnSave;
     private javax.swing.JButton btnSearch;

@@ -8,6 +8,15 @@ package com.mycompany.view;
 import com.mycompany.entity.Employee;
 import com.mycompany.service.EmployeeService;
 import com.mycompany.service.impl.EmployeeServiceImpl;
+import java.util.Properties;
+import java.util.Random;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+import javax.mail.PasswordAuthentication;
 import javax.swing.JOptionPane;
 
 /**
@@ -20,7 +29,7 @@ public class ForgotPassword extends javax.swing.JFrame {
      * Creates new form ForgotPassword
      */
     private Employee employee = null;
-    private EmployeeService employeeService = new EmployeeServiceImpl();
+    private EmployeeService employeeService = null;
 
     public ForgotPassword() {
         initComponents();
@@ -40,9 +49,7 @@ public class ForgotPassword extends javax.swing.JFrame {
         txtEmail = new javax.swing.JTextField();
         txtVerification = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        txtNewPassword = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        txtConfirmPassword = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         btnChangeThePassword = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
@@ -50,6 +57,8 @@ public class ForgotPassword extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        txtNewPassword = new javax.swing.JPasswordField();
+        txtConfirmPassword = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -126,10 +135,10 @@ public class ForgotPassword extends javax.swing.JFrame {
                         .addGap(21, 21, 21)
                         .addComponent(btnSendCode))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(btnChangeThePassword, javax.swing.GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE)
-                        .addComponent(txtVerification, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(txtConfirmPassword, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(txtNewPassword, javax.swing.GroupLayout.Alignment.LEADING)))
+                        .addComponent(txtNewPassword, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(btnChangeThePassword, javax.swing.GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE)
+                        .addComponent(txtVerification, javax.swing.GroupLayout.Alignment.LEADING)))
                 .addGap(4, 4, 4))
             .addGroup(layout.createSequentialGroup()
                 .addGap(96, 96, 96)
@@ -161,7 +170,7 @@ public class ForgotPassword extends javax.swing.JFrame {
                     .addComponent(jLabel5)
                     .addComponent(txtVerification, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6)
                     .addComponent(txtNewPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
@@ -181,17 +190,69 @@ public class ForgotPassword extends javax.swing.JFrame {
     }//GEN-LAST:event_txtEmailActionPerformed
 
     private void btnChangeThePasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChangeThePasswordActionPerformed
-        Login lg = new Login();
-        lg.setVisible(true);
+        employeeService = new EmployeeServiceImpl();
+
+        try {
+            String username = txtUserName.getText();
+            employee = employeeService.getByUsername(username);
+                if (txtNewPassword.getText().equals(txtConfirmPassword.getText())) {
+                    employee.setPassword(txtNewPassword.getText());
+                    employeeService.modify(employee);
+                    JOptionPane.showMessageDialog(this, "Change password success!");
+                    Login lg = new Login();
+                    lg.setVisible(true);
+                    this.dispose();
+                    
+                } else {
+                    JOptionPane.showMessageDialog(this, "Please enter the same password!");
+                    txtConfirmPassword.setText("");
+                }
+
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
     }//GEN-LAST:event_btnChangeThePasswordActionPerformed
 
     private void btnSendCodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSendCodeActionPerformed
+
+        String username = "tuanhaph12996@fpt.edu.vn";
+        String password = "anhmaiyeuem123";
+
+        Properties prop = new Properties();
+        prop.put("mail.smtp.host", "smtp.gmail.com");
+        prop.put("mail.smtp.port", "587");
+        prop.put("mail.smtp.auth", "true");
+        prop.put("mail.smtp.starttls.enable", "true"); //TLS
+
+        Session session = Session.getInstance(prop,
+                new javax.mail.Authenticator() {
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(username, password);
+            }
+        });
+
         try {
-            String username = txtUserName.getText().trim();
-            employee = employeeService.getByUsername(username);
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, e);
+
+            Message message = new MimeMessage(session);
+            message.setFrom(new InternetAddress("tuanhaph12996@fpt.edu.vn"));
+            message.setRecipients(
+                    Message.RecipientType.TO,
+                    InternetAddress.parse(txtEmail.getText())
+            );
+            message.setSubject("Confirm Password");
+            message.setText(String.valueOf(randomNumber()));
+
+            Transport.send(message);
+
+            JOptionPane.showMessageDialog(this, "Email send success");
+
+        } catch (MessagingException e) {
+            e.printStackTrace();
         }
+
     }//GEN-LAST:event_btnSendCodeActionPerformed
 
     /**
@@ -228,7 +289,11 @@ public class ForgotPassword extends javax.swing.JFrame {
 //            }
 //        });
 //    }
-
+    public Integer randomNumber() {
+        Random random = new Random();
+        int x = random.nextInt(10000);
+        return x;
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnChangeThePassword;
     private javax.swing.JButton btnSendCode;
@@ -239,9 +304,9 @@ public class ForgotPassword extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JTextField txtConfirmPassword;
+    private javax.swing.JPasswordField txtConfirmPassword;
     private javax.swing.JTextField txtEmail;
-    private javax.swing.JTextField txtNewPassword;
+    private javax.swing.JPasswordField txtNewPassword;
     private javax.swing.JTextField txtUserName;
     private javax.swing.JTextField txtVerification;
     // End of variables declaration//GEN-END:variables

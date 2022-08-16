@@ -123,6 +123,8 @@ public class AccountManager extends javax.swing.JFrame {
         buttonGroup1.add(rdoFemale);
         rdoFemale.setText("Female");
 
+        btnUpdate.setBackground(new java.awt.Color(255, 153, 0));
+        btnUpdate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Edit.png"))); // NOI18N
         btnUpdate.setText("Update");
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -130,6 +132,8 @@ public class AccountManager extends javax.swing.JFrame {
             }
         });
 
+        btcCancel.setBackground(new java.awt.Color(255, 153, 0));
+        btcCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Exit.png"))); // NOI18N
         btcCancel.setText("EXIT");
         btcCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -154,6 +158,8 @@ public class AccountManager extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tblAccount);
 
+        btnCreate.setBackground(new java.awt.Color(255, 153, 0));
+        btnCreate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Add.png"))); // NOI18N
         btnCreate.setText("Create");
         btnCreate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -172,6 +178,8 @@ public class AccountManager extends javax.swing.JFrame {
         buttonGroup2.add(rdoUnacivity);
         rdoUnacivity.setText("Inactive");
 
+        btnNew.setBackground(new java.awt.Color(255, 153, 0));
+        btnNew.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Refresh.png"))); // NOI18N
         btnNew.setText("NEW");
         btnNew.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -189,8 +197,8 @@ public class AccountManager extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                        .addComponent(btnUpdate)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
                         .addComponent(btnNew, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btcCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)

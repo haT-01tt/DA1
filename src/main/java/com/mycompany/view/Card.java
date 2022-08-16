@@ -34,7 +34,7 @@ public class Card extends javax.swing.JFrame {
     private static Employee em = null;
     private Object[] obj = null;
     private DefaultTableModel defaultTableModel = null;
-
+    
     public Card(Employee employee) {
         initComponents();
         setLocationRelativeTo(null);
@@ -98,6 +98,7 @@ public class Card extends javax.swing.JFrame {
 
         btnDeleteOne.setBackground(new java.awt.Color(255, 153, 0));
         btnDeleteOne.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        btnDeleteOne.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Tasklist.png"))); // NOI18N
         btnDeleteOne.setText("Remove");
         btnDeleteOne.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -107,6 +108,7 @@ public class Card extends javax.swing.JFrame {
 
         btnDeleteAll.setBackground(new java.awt.Color(255, 153, 0));
         btnDeleteAll.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        btnDeleteAll.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Delete.png"))); // NOI18N
         btnDeleteAll.setText("Clear");
         btnDeleteAll.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -118,6 +120,8 @@ public class Card extends javax.swing.JFrame {
 
         txtQuantity.setMinimumSize(new java.awt.Dimension(0, 0));
 
+        btnUpdate.setBackground(new java.awt.Color(255, 153, 0));
+        btnUpdate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Edit.png"))); // NOI18N
         btnUpdate.setText("Update");
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -130,6 +134,7 @@ public class Card extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(255, 204, 0));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Money.png"))); // NOI18N
         jButton1.setText("PAY");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -138,6 +143,7 @@ public class Card extends javax.swing.JFrame {
         });
 
         btcCancel.setBackground(new java.awt.Color(255, 153, 0));
+        btcCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Opendoor.png"))); // NOI18N
         btcCancel.setText("EXIT");
         btcCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -157,23 +163,26 @@ public class Card extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 596, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(btnDeleteOne, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel13)
-                                    .addComponent(txtQuantity, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(101, 101, 101))
+                                .addComponent(jLabel13)
+                                .addGap(134, 134, 134))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(btnDeleteAll, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnDeleteAll)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btcCancel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(52, 52, 52))))))
+                                        .addComponent(btcCancel)))
+                                .addGap(52, 52, 52))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(txtQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(btnDeleteOne, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(btnUpdate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addGap(86, 86, 86))))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -227,6 +236,7 @@ public class Card extends javax.swing.JFrame {
 
         btnAddCard.setBackground(new java.awt.Color(255, 153, 0));
         btnAddCard.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        btnAddCard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Add.png"))); // NOI18N
         btnAddCard.setText("Add card");
         btnAddCard.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -238,7 +248,8 @@ public class Card extends javax.swing.JFrame {
         jLabel4.setText("Search product :");
 
         btnSearch.setBackground(new java.awt.Color(255, 153, 0));
-        btnSearch.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        btnSearch.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnSearch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Search.png"))); // NOI18N
         btnSearch.setText("Search");
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -246,6 +257,8 @@ public class Card extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setBackground(new java.awt.Color(255, 153, 0));
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Refresh.png"))); // NOI18N
         jButton2.setText("Refresh");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -289,8 +302,8 @@ public class Card extends javax.swing.JFrame {
                     .addComponent(btnSearch)
                     .addComponent(jButton2))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42))
         );
 
         jPanel3Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {btnSearch, jButton2});
@@ -309,9 +322,9 @@ public class Card extends javax.swing.JFrame {
                         .addComponent(jLabel3))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(25, 25, 25)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(25, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -424,16 +437,24 @@ public class Card extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Please choose row table you want remove");
             return;
         }
-        listCard.remove(rowSelectedCard);
+        List<Object[]> listObject = new ArrayList<>(map.keySet());
+        Object[] flag = null;
+        for (int i = 0; i < listObject.size(); i++) {
+            if (i == rowSelectedCard) {
+                flag = listObject.get(i);
+            }
+        }
+        
+        map.remove(flag);
         txtQuantity.setValue(0);
-        fillToCard();
+        fillMapToCard();
 
     }//GEN-LAST:event_btnDeleteOneActionPerformed
 
     private void btnDeleteAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteAllActionPerformed
         
-        listCard = new ArrayList<>();
-        fillToCard();
+        map = new HashMap<>();
+        fillMapToCard();
 
     }//GEN-LAST:event_btnDeleteAllActionPerformed
 
@@ -527,18 +548,17 @@ public class Card extends javax.swing.JFrame {
             });
         }
     }
-    
-    public void fillToCard() {
-        
-        DefaultTableModel defaultTableModel = (DefaultTableModel) tblCard.getModel();
-        defaultTableModel.setRowCount(0);
-        for (CardItem c : listCard) {
-            defaultTableModel.addRow(new Object[]{
-                c.getId(), c.getProductCode(), c.getName(), c.getQuantity(), c.getPrice()
-            });
-        }
-    }
-    
+
+//    public void fillToCard() {
+//        
+//        DefaultTableModel defaultTableModel = (DefaultTableModel) tblCard.getModel();
+//        defaultTableModel.setRowCount(0);
+//        for (CardItem c : listCard) {
+//            defaultTableModel.addRow(new Object[]{
+//                c.getId(), c.getProductCode(), c.getName(), c.getQuantity(), c.getPrice()
+//            });
+//        }
+//    }
     public void fillMapToCard() {
         
         DefaultTableModel defaultTableModel = (DefaultTableModel) tblCard.getModel();

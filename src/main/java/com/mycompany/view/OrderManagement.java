@@ -173,6 +173,7 @@ public class OrderManagement extends javax.swing.JFrame {
         buttonGroup1.add(rdoUnPaid);
         rdoUnPaid.setText("UnPaid");
 
+        btnUpdateOD.setBackground(new java.awt.Color(255, 153, 0));
         btnUpdateOD.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnUpdateOD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Edit.png"))); // NOI18N
         btnUpdateOD.setText("Update");
@@ -221,6 +222,7 @@ public class OrderManagement extends javax.swing.JFrame {
 
         txtTotalPrice.setEnabled(false);
 
+        btnNewO1.setBackground(new java.awt.Color(255, 153, 0));
         btnNewO1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnNewO1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Print.png"))); // NOI18N
         btnNewO1.setText(" Export file");
@@ -304,7 +306,7 @@ public class OrderManagement extends javax.swing.JFrame {
                                         .addComponent(txtProductOD, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(txtOrderCodeOD, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(txtPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addContainerGap(20, Short.MAX_VALUE))))
+                        .addContainerGap(24, Short.MAX_VALUE))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

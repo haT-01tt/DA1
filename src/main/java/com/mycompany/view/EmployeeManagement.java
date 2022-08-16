@@ -81,6 +81,7 @@ public class EmployeeManagement extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel6.setText("Employee Management");
 
+        btcCancel.setBackground(new java.awt.Color(255, 153, 0));
         btcCancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Exit.png"))); // NOI18N
         btcCancel.setText("Cancel");
         btcCancel.addActionListener(new java.awt.event.ActionListener() {
@@ -105,6 +106,7 @@ public class EmployeeManagement extends javax.swing.JFrame {
         buttonGroup1.add(rdoFemale);
         rdoFemale.setText("Female");
 
+        btnUpdate.setBackground(new java.awt.Color(255, 153, 0));
         btnUpdate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Edit.png"))); // NOI18N
         btnUpdate.setText("UPDATE");
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
@@ -113,6 +115,7 @@ public class EmployeeManagement extends javax.swing.JFrame {
             }
         });
 
+        btnChoose.setBackground(new java.awt.Color(255, 153, 0));
         btnChoose.setText("Choose File");
         btnChoose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

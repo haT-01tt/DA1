@@ -53,9 +53,9 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="txtSearchByDate" min="-2" pref="222" max="-2" attributes="0"/>
+                                      <Component id="txtSearch" min="-2" pref="222" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="btnSearch" min="-2" pref="73" max="-2" attributes="0"/>
+                                      <Component id="btnSearch" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -88,7 +88,7 @@
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="txtSearchByDate" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtSearch" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnSearch" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
@@ -98,7 +98,7 @@
                   <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lblTotalrevenue" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="70" max="32767" attributes="0"/>
+              <EmptySpace pref="60" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -114,10 +114,10 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Search by date:"/>
+        <Property name="text" type="java.lang.String" value="Search by Order:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtSearchByDate">
+    <Component class="javax.swing.JTextField" name="txtSearch">
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">
       <AuxValues>
@@ -163,6 +163,9 @@
     </Container>
     <Component class="javax.swing.JButton" name="btnSearch">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/icon/Search.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Search"/>
       </Properties>
       <Events>

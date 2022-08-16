@@ -173,7 +173,7 @@ public class HomePage extends javax.swing.JFrame {
 
         btnThongKe.setBackground(new java.awt.Color(255, 204, 102));
         btnThongKe.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        btnThongKe.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Notes.png"))); // NOI18N
+        btnThongKe.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Barchart.png"))); // NOI18N
         btnThongKe.setText("STATISTICAL");
         btnThongKe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

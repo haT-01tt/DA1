@@ -35,8 +35,8 @@
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="btnCreate" min="-2" pref="93" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnUpdate" min="-2" pref="93" max="-2" attributes="0"/>
-                      <EmptySpace pref="10" max="32767" attributes="0"/>
+                      <Component id="btnUpdate" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="8" max="32767" attributes="0"/>
                       <Component id="btnNew" min="-2" pref="93" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="btcCancel" min="-2" pref="99" max="-2" attributes="0"/>
@@ -247,6 +247,12 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnUpdate">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="99" red="ff" type="rgb"/>
+        </Property>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/icon/Edit.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Update"/>
       </Properties>
       <Events>
@@ -255,6 +261,12 @@
     </Component>
     <Component class="javax.swing.JButton" name="btcCancel">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="99" red="ff" type="rgb"/>
+        </Property>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/icon/Exit.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="EXIT"/>
       </Properties>
       <Events>
@@ -359,6 +371,12 @@
     </Container>
     <Component class="javax.swing.JButton" name="btnCreate">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="99" red="ff" type="rgb"/>
+        </Property>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/icon/Add.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Create"/>
       </Properties>
       <Events>
@@ -396,6 +414,12 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnNew">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="99" red="ff" type="rgb"/>
+        </Property>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/icon/Refresh.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="NEW"/>
       </Properties>
       <Events>

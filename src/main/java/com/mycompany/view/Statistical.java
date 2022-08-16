@@ -4,8 +4,13 @@
  */
 package com.mycompany.view;
 
+import com.mycompany.entity.OrderDetail;
+import com.mycompany.reopsitory.OrderDetailRepo;
+import com.mycompany.service.OrderDetailService;
+import com.mycompany.service.impl.OrderDetailServiceImpl;
 import com.mycompany.service.impl.OrderServiceImpl;
 import java.util.List;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -18,6 +23,9 @@ public class Statistical extends javax.swing.JFrame {
      * Creates new form Statistical
      */
     private List<Object[]> listObj = null;
+    private OrderDetailService orderService = null;
+    private OrderDetail order = null;
+    private OrderDetailRepo orderRepo = null;
     private Object[] obj = null;
 
     public Statistical() {
@@ -39,7 +47,7 @@ public class Statistical extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        txtSearchByDate = new javax.swing.JTextField();
+        txtSearch = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblRevenue = new javax.swing.JTable();
         btnSearch = new javax.swing.JButton();
@@ -62,7 +70,7 @@ public class Statistical extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setText(" Revenue statistics");
 
-        jLabel1.setText("Search by date:");
+        jLabel1.setText("Search by Order:");
 
         tblRevenue.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -74,6 +82,7 @@ public class Statistical extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tblRevenue);
 
+        btnSearch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Search.png"))); // NOI18N
         btnSearch.setText("Search");
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -104,9 +113,9 @@ public class Statistical extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel1)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(txtSearchByDate, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
-                                        .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                        .addComponent(btnSearch)))))
                         .addGap(0, 258, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(19, 19, 19)
@@ -128,7 +137,7 @@ public class Statistical extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtSearchByDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSearch))
                 .addGap(32, 32, 32)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -136,13 +145,30 @@ public class Statistical extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(lblTotalrevenue))
-                .addContainerGap(70, Short.MAX_VALUE))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
+        orderService = new OrderDetailServiceImpl() {
+        };
+        if (txtSearch.getText().equals("")) {
+            JOptionPane.showMessageDialog(this, "Please input proCode");
+        } else {
+            try {
+                String orderCode = txtSearch.getText().trim();
+                order = orderService.getByOrderCode(orderCode);
+                if (order != null) {
+                    //txtSearch.setText(promotion.getName());\
+                    JOptionPane.showMessageDialog(this, "Found success");
+                }
+
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(this, "Not found");
+            }
+        }
 
     }//GEN-LAST:event_btnSearchActionPerformed
 
@@ -199,6 +225,6 @@ public class Statistical extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblTotalrevenue;
     private javax.swing.JTable tblRevenue;
-    private javax.swing.JTextField txtSearchByDate;
+    private javax.swing.JTextField txtSearch;
     // End of variables declaration//GEN-END:variables
 }
