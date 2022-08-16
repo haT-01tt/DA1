@@ -35,6 +35,12 @@ public class OrderRepo {
         List<Object[]> list = q.getResultList();
         return list;
     }
+     public List<Object[]> getAllCustomOrderCode(String orderCode) {
+        Query query = session.createQuery(SQLCommand.FIND_ALL_ORDER_CODE_CUSTOM);
+        query.setParameter("orderCode", orderCode);
+        List<Object[]> list = query.getResultList();
+        return list;
+    }
 
     public Order getById(Integer id) {
         TypedQuery<Order> t = session.createQuery(SQLCommand.FIND_BY_ID_ORDER, Order.class);

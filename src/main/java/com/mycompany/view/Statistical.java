@@ -7,8 +7,10 @@ package com.mycompany.view;
 import com.mycompany.entity.OrderDetail;
 import com.mycompany.reopsitory.OrderDetailRepo;
 import com.mycompany.service.OrderDetailService;
+import com.mycompany.service.ProductService;
 import com.mycompany.service.impl.OrderDetailServiceImpl;
 import com.mycompany.service.impl.OrderServiceImpl;
+import com.mycompany.service.impl.ProductServiceImpl;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -31,7 +33,7 @@ public class Statistical extends javax.swing.JFrame {
     public Statistical() {
         initComponents();
         setLocationRelativeTo(null);
-        fillToOrder();
+        fillToOrder(null);
         listObj = new OrderServiceImpl().findAllCustomOrder();
         Double total = 0.0;
         for (Object[] o : listObj) {
@@ -159,11 +161,9 @@ public class Statistical extends javax.swing.JFrame {
         } else {
             try {
                 String orderCode = txtSearch.getText().trim();
-                order = orderService.getByOrderCode(orderCode);
-                if (order != null) {
-                    //txtSearch.setText(promotion.getName());\
-                    JOptionPane.showMessageDialog(this, "Found success");
-                }
+
+                fillToOrder(orderCode);
+                JOptionPane.showMessageDialog(this, "Found success");
 
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(this, "Not found");
@@ -206,9 +206,14 @@ public class Statistical extends javax.swing.JFrame {
 //            }
 //        });
 //    }
-    public void fillToOrder() {
+    public void fillToOrder(String data) {
         DefaultTableModel defaultTableModel = (DefaultTableModel) tblRevenue.getModel();
-        listObj = new OrderServiceImpl().findAllCustomOrder();
+        if (data == null) {
+            listObj = new OrderServiceImpl().findAllCustomOrder();
+        } else {
+            listObj = new OrderServiceImpl().getAllCustomOrderCode(data);
+        }
+
         defaultTableModel.setRowCount(0);
         for (Object[] o : listObj) {
             defaultTableModel.addRow(new Object[]{

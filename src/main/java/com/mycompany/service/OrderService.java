@@ -25,4 +25,6 @@ public interface OrderService {
     Order getById(Integer id);
     
     Integer create(Order order);
+    
+    List<Object[]> getAllCustomOrderCode(String orderCode);
 }

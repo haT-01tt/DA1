@@ -53,4 +53,9 @@ public class OrderServiceImpl implements OrderService {
         return orderRepo.save(order);
     }
 
+    @Override
+    public List<Object[]> getAllCustomOrderCode(String orderCode) {
+        return orderRepo.getAllCustomOrderCode(orderCode);
+    }
+
 }
