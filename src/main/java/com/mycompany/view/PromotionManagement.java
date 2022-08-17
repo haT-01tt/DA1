@@ -402,6 +402,8 @@ public class PromotionManagement extends javax.swing.JFrame {
         txtStart.setText(datetoString(promotion.getStartDate()));
         txtEnd.setText(datetoString(promotion.getEndDate()));
         txtdis.setText(String.valueOf(promotion.getDiscount()));
+        rdoActive.setSelected(promotion.getAvailable());
+        rdoInActive.setSelected(!promotion.getAvailable());
     }//GEN-LAST:event_tblProMouseClicked
 
     private void btnNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewActionPerformed
